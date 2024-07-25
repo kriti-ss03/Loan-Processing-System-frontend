@@ -14,8 +14,12 @@
             <p>For viewing existing loan applications, click on "View applications".</p>
         </div>
         <div class="buttons">
-            <button onclick="location.href='#'">Submit an Application</button>
-            <button onclick="location.href='#'">View Applications</button>
-        </div>
+            
+            <button [routerLink]="['/submitloan']">Submit an Application</button>
+            
+            <button [routerLink]="['/viewapps']">View Applications</button>
+           
+            
+            </div>
     </div>
 </body>
