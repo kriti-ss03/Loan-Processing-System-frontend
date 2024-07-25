@@ -1,116 +1,124 @@
-<body>
-    <form class="loan-form">
-        <h1>Submit new application</h1>
-        
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName">
-
-        <label for="middleName">Middle Name</label>
-        <input type="text" id="middleName" name="middleName">
-
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName">
-
-        <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" name="dob">
-
-        <label for="maritalStatus">Marital Status</label>
-        <select id="maritalStatus" name="maritalStatus">
-            <option value="single">Single</option>
-            <option value="married">Married</option>
-            <option value="divorced">Divorced</option>
-            <option value="widowed">Widowed</option>
-        </select>
-
-        <label for="ssn">SSN Number</label>
-        <input type="text" id="ssn" name="ssn">
-
-        <label for="loanAmount">Loan Amount</label>
-        <input type="number" id="loanAmount" name="loanAmount">
-
-        <label for="loanPurpose">Loan Purpose</label>
-        <select id="loanPurpose" name="loanPurpose">
-            <option value="home">Home</option>
-            <option value="car">Car</option>
-            <option value="education">Education</option>
-            <option value="business">Business</option>
-        </select>
-
-        <label for="description">Description</label>
-        <textarea id="description" name="description"></textarea>
-
-        <fieldset>
-            <legend>Address</legend>
+@if(checkSubmit){
+    <app-submit-success/>
+}
+@else{
+    <body>
+        <form class="loan-form" method="dialog">
+            <h1>Submit new application</h1>
             
-            <label for="addressLine1">Address Line 1</label>
-            <input type="text" id="addressLine1" name="addressLine1">
-
-            <label for="addressLine2">Address Line 2</label>
-            <input type="text" id="addressLine2" name="addressLine2">
-
-            <label for="city">City</label>
-            <input type="text" id="city" name="city">
-
-            <label for="state">State</label>
-            <input type="text" id="state" name="state">
-
-            <label for="postalCode">Postal Code</label>
-            <input type="text" id="postalCode" name="postalCode">
-        </fieldset>
-
-        <fieldset>
-            <legend>Contact Information</legend>
-            
-            <label for="homePhone">Home Phone</label>
-            <input type="text" id="homePhone" name="homePhone">
-
-            <label for="officePhone">Office Phone</label>
-            <input type="text" id="officePhone" name="officePhone">
-
-            <label for="mobile">Mobile</label>
-            <input type="text" id="mobile" name="mobile">
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email">
-        </fieldset>
-
-        <fieldset>
-            <legend>Employment Details</legend>
-
-            <label for="employerName">Employer name</label>
-            <input type="text" id="employerName" name="employerName">
-
-            <label for="annualSalary">Annual Salary</label>
-            <input type="number" id="annualSalary" name="annualSalary">
-
-            <label for="workExperience">Work Experience</label>
-            <div class="work-experience">
-                <input type="number" id="workExperienceYear" name="workExperienceYear" placeholder="Year">
-                <input type="number" id="workExperienceMonth" name="workExperienceMonth" placeholder="Month">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName">
+    
+            <label for="middleName">Middle Name</label>
+            <input type="text" id="middleName" name="middleName">
+    
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+    
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+    
+            <label for="maritalStatus">Marital Status</label>
+            <select id="maritalStatus" name="maritalStatus">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+            </select>
+    
+            <label for="ssn">SSN Number</label>
+            <input type="text" id="ssn" name="ssn">
+    
+            <label for="loanAmount">Loan Amount</label>
+            <input type="number" id="loanAmount" name="loanAmount">
+    
+            <label for="loanPurpose">Loan Purpose</label>
+            <select id="loanPurpose" name="loanPurpose">
+                <option value="home">Home</option>
+                <option value="car">Car</option>
+                <option value="education">Education</option>
+                <option value="business">Business</option>
+            </select>
+    
+            <label for="description">Description</label>
+            <textarea id="description" name="description"></textarea>
+    
+            <fieldset>
+                <legend>Address</legend>
+                
+                <label for="addressLine1">Address Line 1</label>
+                <input type="text" id="addressLine1" name="addressLine1">
+    
+                <label for="addressLine2">Address Line 2</label>
+                <input type="text" id="addressLine2" name="addressLine2">
+    
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+    
+                <label for="state">State</label>
+                <input type="text" id="state" name="state">
+    
+                <label for="postalCode">Postal Code</label>
+                <input type="text" id="postalCode" name="postalCode">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Contact Information</legend>
+                
+                <label for="homePhone">Home Phone</label>
+                <input type="text" id="homePhone" name="homePhone">
+    
+                <label for="officePhone">Office Phone</label>
+                <input type="text" id="officePhone" name="officePhone">
+    
+                <label for="mobile">Mobile</label>
+                <input type="text" id="mobile" name="mobile">
+    
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Employment Details</legend>
+    
+                <label for="employerName">Employer name</label>
+                <input type="text" id="employerName" name="employerName">
+    
+                <label for="annualSalary">Annual Salary</label>
+                <input type="number" id="annualSalary" name="annualSalary">
+    
+                <label for="workExperience">Work Experience</label>
+                <div class="work-experience">
+                    <input type="number" id="workExperienceYear" name="workExperienceYear" placeholder="Year">
+                    <input type="number" id="workExperienceMonth" name="workExperienceMonth" placeholder="Month">
+                </div>
+    
+                <label for="designation">Designation</label>
+                <input type="text" id="designation" name="designation">
+    
+                <label for="employerAddressLine1">Address Line 1</label>
+                <input type="text" id="employerAddressLine1" name="employerAddressLine1">
+    
+                <label for="employerAddressLine2">Address Line 2</label>
+                <input type="text" id="employerAddressLine2" name="employerAddressLine2">
+    
+                <label for="employerCity">City</label>
+                <input type="text" id="employerCity" name="employerCity">
+    
+                <label for="employerState">State</label>
+                <input type="text" id="employerState" name="employerState">
+    
+                <label for="employerPostalCode">Postal Code</label>
+                <input type="text" id="employerPostalCode" name="employerPostalCode">
+            </fieldset>
+    
+            <div class="buttons">
+                <button type="submit" (click)="OnSubmit()">Submit</button>
+                <button type="button" [routerLink]="['']" >Cancel</button>
+                
             </div>
+        </form>
+    </body>
+    
+}
 
-            <label for="designation">Designation</label>
-            <input type="text" id="designation" name="designation">
-
-            <label for="employerAddressLine1">Address Line 1</label>
-            <input type="text" id="employerAddressLine1" name="employerAddressLine1">
-
-            <label for="employerAddressLine2">Address Line 2</label>
-            <input type="text" id="employerAddressLine2" name="employerAddressLine2">
-
-            <label for="employerCity">City</label>
-            <input type="text" id="employerCity" name="employerCity">
-
-            <label for="employerState">State</label>
-            <input type="text" id="employerState" name="employerState">
-
-            <label for="employerPostalCode">Postal Code</label>
-            <input type="text" id="employerPostalCode" name="employerPostalCode">
-        </fieldset>
-
-        <div class="buttons">
-            <button type="submit">Submit</button>
-            <button type="button">Cancel</button>
-        </div>
-    </form>
-</body>
