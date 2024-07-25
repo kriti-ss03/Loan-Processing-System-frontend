@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-submit-success',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './submit-success.component.html',
   styleUrl: './submit-success.component.scss'
 })
