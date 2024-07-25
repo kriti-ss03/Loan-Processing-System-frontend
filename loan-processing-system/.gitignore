@@ -1,7 +1,7 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 #todo file
-./app/todo.txt
+/src/app/todo.txt
 
 # Compiled output
 /dist
