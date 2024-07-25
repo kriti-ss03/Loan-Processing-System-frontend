@@ -3,4 +3,7 @@
 1. in the submitloan component i need to add the required constraints in all the elements present.
 2. check and study about *ngif nicely
 3. create a proper design to it
-4.
+4. create a proper interface in .ts file and check what actaully happens due to it(basically what data is going in the backend)
+5.study about angular forms and its complete usecase and functinality
+6.validation wala part
+7. final finishing
