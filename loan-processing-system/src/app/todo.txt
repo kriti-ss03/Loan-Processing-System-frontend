@@ -1,0 +1,6 @@
+
+--------submitloan component--------
+1. in the submitloan component i need to add the required constraints in all the elements present.
+2. check and study about *ngif nicely
+3. create a proper design to it
+4.
