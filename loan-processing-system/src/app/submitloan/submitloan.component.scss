@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.loan-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.loan-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.loan-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.loan-form input,
+.loan-form select,
+.loan-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.loan-form textarea {
+    height: 100px;
+}
+
+.loan-form fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.loan-form fieldset legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.loan-form .work-experience {
+    display: flex;
+    gap: 10px;
+}
+
+.loan-form .buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.loan-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loan-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.loan-form button[type="button"] {
+    background-color: #f44336;
+    color: #fff;
+}
