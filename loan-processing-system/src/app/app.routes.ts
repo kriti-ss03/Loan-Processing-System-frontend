@@ -10,17 +10,15 @@ export const routes: Routes = [
         component: HomeComponent
     },
     {
-        path:'/submitloan',
+        path:'submitloan',
         component: SubmitloanComponent
     },
     {
-        path:'/viewapps',
+        path:'viewapps',
         component:ViewappsComponent
     },
     {
-        path:'/viewapplication',
+        path:'viewapplication',
         component:ViewApplicationComponent
     }
-
-
 ];
