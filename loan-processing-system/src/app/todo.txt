@@ -7,3 +7,19 @@
 5.study about angular forms and its complete usecase and functinality
 6.validation wala part
 7. final finishing of submitloan page
+
+
+--------view application---------
+1.only the form is visible which will fetch the details from backend and have commented the remaning part oh the html file, complete that functionality
+2.check the validity of application
+3.study about angular forms
+4. create a proper css file
+5. final finshing of view-application page
+
+-------view apps------
+1.in this page I have made the use of *ngfor but i have to figure out hjow to use @for loop function provided by angular, similrly if their is any @ngif i have to see how to chnage intp @if
+2. One major thing is that application id has to be a link which will direct me to that particular person details, so see how to do that
+basically try to figure out how to give that if i clcik on application id then i have to send that application id to backend so that 
+backend can send the details of that particular person to the user side.
+3.Design the viewapps page
+4. final finishing of the page

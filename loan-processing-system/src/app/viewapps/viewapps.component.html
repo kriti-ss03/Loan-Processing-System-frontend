@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <h1>View Applications</h1>
     <p>You can view the applications here:</p>
 
@@ -13,4 +13,27 @@
         </thead>
     </table>
     <button type="button" [routerLink]="['']" >Back</button>
-</body>
+</body> -->
+<h2>View Applications</h2>
+<p>You can view the applications here:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Application ID</th>
+      <th>Applicant Name</th>
+      <th>Submitted Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let application of applications">
+        <td><a [routerLink]="['/viewapplication', application.applicationId]">{{ application.applicationId }}</a></td>
+      <td>{{ application.applicantName }}</td>
+      <td>{{ application.submittedDate }}</td>
+      <td>{{ application.status }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" [routerLink]="['']" >Back</button>
