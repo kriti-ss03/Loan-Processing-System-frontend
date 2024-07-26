@@ -6,4 +6,4 @@
 4. create a proper interface in .ts file and check what actaully happens due to it(basically what data is going in the backend)
 5.study about angular forms and its complete usecase and functinality
 6.validation wala part
-7. final finishing
+7. final finishing of submitloan page

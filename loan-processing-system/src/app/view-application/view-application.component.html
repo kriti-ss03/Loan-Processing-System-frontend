@@ -1,1 +1,219 @@
-<p>view-application works!</p>
+  <!-- <div class="container">
+    <h2>View Application</h2>
+    <div>
+      <p>Application ID: {{applicationData.applicationId}}</p>
+      <p>Application Status: {{applicationData.applicationStatus}}</p>
+      <p>Score: {{applicationData.score}}</p>
+      <p>Decline Reason: {{applicationData.declineReason}}</p>
+    </div>
+  
+    <form>
+      <div>
+        <label>First Name</label>
+        <input type="text" [(ngModel)]="applicationData.firstName" name="firstName" readonly>
+      </div>
+      <div>
+        <label>Middle Name</label>
+        <input type="text" [(ngModel)]="applicationData.middleName" name="middleName" readonly>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input type="text" [(ngModel)]="applicationData.lastName" name="lastName" readonly>
+      </div>
+      <div>
+        <label>Date of Birth</label>
+        <input type="date" [(ngModel)]="applicationData.dateOfBirth" name="dateOfBirth" readonly>
+      </div>
+      <div>
+        <label>Marital Status</label>
+        <input type="text" [(ngModel)]="applicationData.maritalStatus" name="maritalStatus" readonly>
+      </div>
+      <div>
+        <label>SSN Number</label>
+        <input type="text" [(ngModel)]="applicationData.ssnNumber" name="ssnNumber" readonly>
+      </div>
+      <div>
+        <label>Loan Amount</label>
+        <input type="text" [(ngModel)]="applicationData.loanAmount" name="loanAmount" readonly>
+      </div>
+      <div>
+        <label>Loan Purpose</label>
+        <input type="text" [(ngModel)]="applicationData.loanPurpose" name="loanPurpose" readonly>
+      </div>
+      <div>
+        <label>Description</label>
+        <textarea [(ngModel)]="applicationData.description" name="description" readonly></textarea>
+      </div>
+  
+      <h3>Address</h3>
+      <div>
+        <label>Address Line 1</label>
+        <input type="text" [(ngModel)]="applicationData.addressLine1" name="addressLine1" readonly>
+      </div>
+      <div>
+        <label>Address Line 2</label>
+        <input type="text" [(ngModel)]="applicationData.addressLine2" name="addressLine2" readonly>
+      </div>
+      <div>
+        <label>City</label>
+        <input type="text" [(ngModel)]="applicationData.city" name="city" readonly>
+      </div>
+      <div>
+        <label>State</label>
+        <input type="text" [(ngModel)]="applicationData.state" name="state" readonly>
+      </div>
+      <div>
+        <label>Postal Code</label>
+        <input type="text" [(ngModel)]="applicationData.postalCode" name="postalCode" readonly>
+      </div>
+  
+      <h3>Contact Information</h3>
+      <div>
+        <label>Home Phone</label>
+        <input type="text" [(ngModel)]="applicationData.homePhone" name="homePhone" readonly>
+      </div>
+      <div>
+        <label>Office Phone</label>
+        <input type="text" [(ngModel)]="applicationData.officePhone" name="officePhone" readonly>
+      </div>
+      <div>
+        <label>Mobile</label>
+        <input type="text" [(ngModel)]="applicationData.mobile" name="mobile" readonly>
+      </div>
+      <div>
+        <label>Email Address</label>
+        <input type="email" [(ngModel)]="applicationData.emailAddress" name="emailAddress" readonly>
+      </div>
+  
+      <h3>Employment Details</h3>
+      <div>
+        <label>Employer Name</label>
+        <input type="text" [(ngModel)]="applicationData.employerName" name="employerName" readonly>
+      </div>
+      <div>
+        <label>Annual Salary</label>
+        <input type="text" [(ngModel)]="applicationData.annualSalary" name="annualSalary" readonly>
+      </div>
+      <div>
+        <label>Work Experience</label>
+        <input type="text" [(ngModel)]="applicationData.workExperience" name="workExperience" readonly>
+      </div>
+      <div>
+        <label>Designation</label>
+        <input type="text" [(ngModel)]="applicationData.designation" name="designation" readonly>
+      </div>
+    </form>
+  
+    <button type="button" [routerLink]="['/viewapps']" >Back</button>
+  </div>
+     -->
+
+     <div class="container">
+        <h2>View Application</h2>
+        <!-- <div>
+          <p>Application ID: {{applicationForm.get('applicationId').value}}</p>
+          <p>Application Status: {{applicationForm.get('applicationStatus').value}}</p>
+          <p>Score: {{applicationForm.get('score').value}}</p>
+          <p>Decline Reason: {{applicationForm.get('declineReason').value}}</p>
+        </div> -->
+      
+        <form [formGroup]="applicationForm">
+          <div>
+            <label>First Name</label>
+            <input type="text" formControlName="firstName" readonly>
+          </div>
+          <div>
+            <label>Middle Name</label>
+            <input type="text" formControlName="middleName" readonly>
+          </div>
+          <div>
+            <label>Last Name</label>
+            <input type="text" formControlName="lastName" readonly>
+          </div>
+          <div>
+            <label>Date of Birth</label>
+            <input type="date" formControlName="dateOfBirth" readonly>
+          </div>
+          <div>
+            <label>Marital Status</label>
+            <input type="text" formControlName="maritalStatus" readonly>
+          </div>
+          <div>
+            <label>SSN Number</label>
+            <input type="text" formControlName="ssnNumber" readonly>
+          </div>
+          <div>
+            <label>Loan Amount</label>
+            <input type="text" formControlName="loanAmount" readonly>
+          </div>
+          <div>
+            <label>Loan Purpose</label>
+            <input type="text" formControlName="loanPurpose" readonly>
+          </div>
+          <div>
+            <label>Description</label>
+            <textarea formControlName="description" readonly></textarea>
+          </div>
+      
+          <h3>Address</h3>
+          <div>
+            <label>Address Line 1</label>
+            <input type="text" formControlName="addressLine1" readonly>
+          </div>
+          <div>
+            <label>Address Line 2</label>
+            <input type="text" formControlName="addressLine2" readonly>
+          </div>
+          <div>
+            <label>City</label>
+            <input type="text" formControlName="city" readonly>
+          </div>
+          <div>
+            <label>State</label>
+            <input type="text" formControlName="state" readonly>
+          </div>
+          <div>
+            <label>Postal Code</label>
+            <input type="text" formControlName="postalCode" readonly>
+          </div>
+      
+          <h3>Contact Information</h3>
+          <div>
+            <label>Home Phone</label>
+            <input type="text" formControlName="homePhone" readonly>
+          </div>
+          <div>
+            <label>Office Phone</label>
+            <input type="text" formControlName="officePhone" readonly>
+          </div>
+          <div>
+            <label>Mobile</label>
+            <input type="text" formControlName="mobile" readonly>
+          </div>
+          <div>
+            <label>Email Address</label>
+            <input type="email" formControlName="emailAddress" readonly>
+          </div>
+      
+          <h3>Employment Details</h3>
+          <div>
+            <label>Employer Name</label>
+            <input type="text" formControlName="employerName" readonly>
+          </div>
+          <div>
+            <label>Annual Salary</label>
+            <input type="text" formControlName="annualSalary" readonly>
+          </div>
+          <div>
+            <label>Work Experience</label>
+            <input type="text" formControlName="workExperience" readonly>
+          </div>
+          <div>
+            <label>Designation</label>
+            <input type="text" formControlName="designation" readonly>
+          </div>
+        </form>
+      
+        <button type="button" [routerLink]="['/viewapps']" >Back</button>
+      </div>
+      
