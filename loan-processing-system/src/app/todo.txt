@@ -23,3 +23,6 @@ basically try to figure out how to give that if i clcik on application id then i
 backend can send the details of that particular person to the user side.
 3.Design the viewapps page
 4. final finishing of the page
+
+
+5. in viewapps service page right now in getApplication by id function i have made it as <any> in pbservable and get request, check this once if you get any error

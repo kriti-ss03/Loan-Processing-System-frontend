@@ -20,4 +20,7 @@ export class ViewappsService {
   getApplications(): Observable<Application[]> {
     return this.http.get<Application[]>(this.apiUrl);
   }
+  getApplicationById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }

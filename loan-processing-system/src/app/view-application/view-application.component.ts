@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ViewApplicationService } from './view-application.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+// import { ViewApplicationService } from './view-application.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+// import { ViewappsService } from '../viewapps/viewapps.component';
+import { ViewappsService } from '../viewapps/viewapps.service';
 
 @Component({
   selector: 'app-view-application',
@@ -13,9 +15,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class ViewApplicationComponent implements OnInit {
   applicationForm!: FormGroup;
 
+  // @Input({required:true}) userId!:number
+
   constructor(
+    private route: ActivatedRoute,
+    private viewappsService:ViewappsService ,
     private fb: FormBuilder,
-    private viewApplicationService: ViewApplicationService
+    // private viewApplicationService: ViewApplicationService
   ) {
     this.applicationForm = this.fb.group({
       applicationId: [''],
@@ -48,8 +54,11 @@ export class ViewApplicationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.viewApplicationService.getApplicationData().subscribe(data => {
-      this.applicationForm.patchValue(data);
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.viewappsService.getApplicationById(Number(id)).subscribe(data => {
+        this.applicationForm.patchValue(data);
+      });
   }
+}
 }
