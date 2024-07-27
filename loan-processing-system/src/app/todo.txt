@@ -1,3 +1,8 @@
+-> change all the url requests make them same as backend(done)
+-> applcation form credentails values same as backend
+->make a fake data to check if every thing is working correctly
+->do the validations
+->read the doc and note down the things that are suppose to be done(done)
 
 --------submitloan component--------
 1. in the submitloan component i need to add the required constraints in all the elements present.
@@ -26,3 +31,4 @@ backend can send the details of that particular person to the user side.
 
 
 5. in viewapps service page right now in getApplication by id function i have made it as <any> in pbservable and get request, check this once if you get any error
+6.also i have made the changes in route of view application check that also if facing issues.
