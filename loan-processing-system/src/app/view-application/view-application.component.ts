@@ -16,7 +16,9 @@ export class ViewApplicationComponent implements OnInit {
   applicationForm!: FormGroup;
 
   // @Input({required:true}) userId!:number
-
+  // i have a option of changing thw way how i take the data from backend and display on client side
+  // currently i am going witht the form method but if this dosent work, then i can make the interface ofn application form and take the values similar to the one i did in viewapps code
+  // or this can be done vis a versa also.
   constructor(
     private route: ActivatedRoute,
     private viewappsService:ViewappsService ,

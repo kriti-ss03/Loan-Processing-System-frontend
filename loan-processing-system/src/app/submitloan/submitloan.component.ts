@@ -89,7 +89,7 @@ export class SubmitloanComponent implements OnInit {
       this.http.post('http://localhost:5000/appl', applicationData) // Replace with your API endpoint
         .subscribe(
           (response) => {
-            console.log('Application submitted successfully:', response);
+            // console.log('Application submitted successfully:', response);
             this.successMessage = 'Application submitted successfully!';
             this.errorMessage = null;
             this.applicationForm.reset(); // Optionally reset the form
