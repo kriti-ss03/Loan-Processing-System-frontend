@@ -2,21 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { SubmitSuccessComponent } from './submit-success/submit-success.component';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+// import { ApplicationData } from './submitloan.service';
 
 
-// add 
-interface ApplicationData {
-  // Define your data structure here
-  firstName: string;
-  lastName: string;
-  middleName:string;
-  dob:Date;
-  email:string;
-  // ... other fields
-}
+// // add 
+// interface ApplicationData {
+//   // Define your data structure here
+//   firstName: string;
+//   lastName: string;
+//   middleName:string;
+//   dob:Date;
+//   email:string;
+//   // ... other fields
+// }
 
 @Component({
   selector: 'app-submitloan',
@@ -37,10 +38,10 @@ export class SubmitloanComponent implements OnInit {
   successMessage: string | null = null;
   errorMessage: string | null = null;
   formErrors: string[] = [];
-
+  // applicationData!: ApplicationData
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
   ) {}
 
   ngOnInit() {
@@ -76,7 +77,7 @@ export class SubmitloanComponent implements OnInit {
   submitForm() {
     this.formErrors = [];
     if (this.applicationForm.valid) {
-      const applicationData: ApplicationData = this.applicationForm.value;
+      let applicationData= this.applicationForm.value;
       console.log(applicationData)
       this.checkSubmit=true;
       this.http.post('http://localhost:5000/appl', applicationData) // Replace with your API endpoint

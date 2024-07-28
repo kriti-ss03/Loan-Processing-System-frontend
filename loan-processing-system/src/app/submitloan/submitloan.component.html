@@ -2,11 +2,6 @@
     <app-submit-success/>
 }
 @else{
-
-
-
-
-
     <!-- <body> -->
         <!-- <form [formGroup]="applicationForm" (ngSubmit)="submitForm()" class="loan-form" method="dialog">
             <h1>Submit new application</h1> -->
@@ -185,63 +180,88 @@
           <label for="description">Description</label>
           <textarea id="description" formControlName="description"></textarea>
         </div>
-        <div>
+        
+        <!-- here is the address -->
+        <fieldset>
+          <legend>Address</legend>
+          
           <label for="addressLine1">Address Line 1</label>
-          <input id="addressLine1" formControlName="addressLine1">
-        </div>
-        <div>
+          <input type="text" id="addressLine1" name="addressLine1" formControlName="addressLine1">
+
           <label for="addressLine2">Address Line 2</label>
-          <input id="addressLine2" formControlName="addressLine2">
-        </div>
-        <div>
+          <input type="text" id="addressLine2" name="addressLine2" formControlName="addressLine2">
+
           <label for="city">City</label>
-          <input id="city" formControlName="city">
-        </div>
-        <div>
+          <input type="text" id="city" formControlName="city">
+
           <label for="state">State</label>
-          <input id="state" formControlName="state">
-        </div>
-        <div>
+          <input type="text" id="state" formControlName="state">
+
           <label for="postalCode">Postal Code</label>
-          <input id="postalCode" formControlName="postalCode">
+          <input type="text" id="postalCode" formControlName="postalCode">
+       </fieldset>
+
+
+       <!-- Here will come contact information -->
+       <fieldset>
+        <legend>Contact Information</legend>
+        
+        <label for="homePhone">Home Phone</label>
+        <input type="text" id="homePhone" formControlName="homePhone">
+
+        <label for="officePhone">Office Phone</label>
+        <input type="text" id="officePhone" formControlName="officePhone">
+
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" formControlName="mobile">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" formControlName="email">
+      </fieldset>
+
+      <!-- here will come employee details -->
+      <fieldset>
+        <legend>Employment Details</legend>
+
+        <label for="employerName">Employer formControlName</label>
+        <input type="text" id="employerName" formControlName="employerName">
+
+        <label for="annualSalary">Annual Salary</label>
+        <input type="number" id="annualSalary" formControlName="annualSalary">
+
+        <label for="workExperience">Work Experience</label>
+        <div class="work-experience">
+            <input type="number" id="workExperienceYear" name="workExperienceYear" formControlName="workExperienceYear" placeholder="Year">
+            <input type="number" id="workExperienceMonth" name="workExperienceMonth" formControlName="workExperienceMonth" placeholder="Month">
         </div>
-        <div>
-          <label for="homePhone">Home Phone</label>
-          <input id="homePhone" formControlName="homePhone">
-        </div>
-        <div>
-          <label for="officePhone">Office Phone</label>
-          <input id="officePhone" formControlName="officePhone">
-        </div>
-        <div>
-          <label for="mobile">Mobile</label>
-          <input id="mobile" formControlName="mobile">
-        </div>
-        <div>
-          <label for="emailAddress">Email Address</label>
-          <input id="emailAddress" formControlName="emailAddress">
-        </div>
-        <div>
-          <label for="employerName">Employer Name</label>
-          <input id="employerName" formControlName="employerName">
-        </div>
-        <div>
-          <label for="annualSalary">Annual Salary</label>
-          <input id="annualSalary" type="number" formControlName="annualSalary">
-        </div>
-        <div>
-          <label for="workExperience">Work Experience</label>
-          <input id="workExperienceYears" type="number" formControlName="workExperienceYears">
-          <input id="workExperienceMonths" type="number" formControlName="workExperienceMonths">
-        </div>
-        <div>
-          <label for="designation">Designation</label>
-          <input id="designation" formControlName="designation">
-        </div>
+
+        <label for="designation">Designation</label>
+        <input type="text" id="designation" formControlName="designation">
+
+        <label for="employerAddressLine1">Address Line 1</label>
+        <input type="text" id="employerAddressLine1" formControlName="employerAddressLine1">
+
+        <label for="employerAddressLine2">Address Line 2</label>
+        <input type="text" id="employerAddressLine2" formControlName="employerAddressLine2">
+
+        <label for="employerCity">City</label>
+        <input type="text" id="employerCity" formControlName="employerCity">
+
+        <label for="employerState">State</label>
+        <input type="text" id="employerState" formControlName="employerState">
+
+        <label for="employerPostalCode">Postal Code</label>
+        <input type="text" id="employerPostalCode" formControlName="employerPostalCode">
+    </fieldset>
+
+       
+        
+
         <div class="buttons">
           <button type="submit" (click)="OnSubmit()">Submit</button>
           <button type="button" [routerLink]="['']" >Cancel</button>  
         </div>
+        
        <!-- Display success or error messages -->
         <!-- <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div> -->
