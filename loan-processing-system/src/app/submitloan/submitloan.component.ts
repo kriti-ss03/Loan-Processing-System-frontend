@@ -36,7 +36,7 @@ export class SubmitloanComponent implements OnInit {
   applicationForm!: FormGroup;
   successMessage: string | null = null;
   errorMessage: string | null = null;
-
+  formErrors: string[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -47,41 +47,34 @@ export class SubmitloanComponent implements OnInit {
     this.applicationForm = this.fb.group({
       // by adding these validators here, we can make sure that user has to put the data inside the field
       //  and then after that if we want to put the check on it we can add the conditional statements in the html file
-      firstName: ['', Validators.required],
-       lastName: ['', Validators.required],
-      // email: ['', [Validators.required, Validators.email]]
-      //firstName:'',
-      middleName:'',
-   //   lastName:'',
-      dob:'',
-      maritalStatus:'',
-      ssn:'',
-      loanAmount:'',
-      loanPurpose:'',
-      description:'',
-      addressLine1:'',
-      addressLine2:'',
-      city:'',
-      state:'',
-      postalCode:'',
-      homePhone:'',
-      officePhone:'',
-      mobile:'',
-      email:'',
-      employerName:'',
-      annualSalary:'',
-      workExperienceYear:'',
-      workExperienceMonth:'',
-      designation:'',
-      employerAddressLine1:'',
-      employerAddressLine2:'',
-      employerCity:'',
-      employerState:'',
-      employerPostalCode:'',
+      firstName: ['', [Validators.required, Validators.maxLength(255)]],
+      middleName: ['', Validators.maxLength(255)],
+      lastName: ['', [Validators.required, Validators.maxLength(255)]],
+      dateOfBirth: ['', Validators.required],
+      maritalStatus: ['', Validators.required],
+      ssnNumber: ['', Validators.required],
+      loanAmount: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      loanPurpose: ['', Validators.required],
+      description: [''],
+      addressLine1: ['', [Validators.required, Validators.maxLength(255)]],
+      addressLine2: ['', Validators.maxLength(255)],
+      city: ['', [Validators.required, Validators.maxLength(255)]],
+      state: ['', [Validators.required, Validators.maxLength(255)]],
+      postalCode: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
+      homePhone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      officePhone: ['', [Validators.pattern('^[0-9]{10}$')]],
+      mobile: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      emailAddress: ['', [Validators.required, Validators.email]],
+      employerName: ['', Validators.required],
+      annualSalary: ['', Validators.required],
+      workExperienceYears: ['', Validators.required],
+      workExperienceMonths: ['', Validators.required],
+      designation: ['', Validators.required]
     });
   }
 
   submitForm() {
+    this.formErrors = [];
     if (this.applicationForm.valid) {
       const applicationData: ApplicationData = this.applicationForm.value;
       console.log(applicationData)
@@ -102,8 +95,15 @@ export class SubmitloanComponent implements OnInit {
         );
     }
     else {
-      this.errorMessage = 'Please fill out all required fields correctly.';
-      this.successMessage = null;
+      this.displayErrors();
     }
   }
+  displayErrors() {
+    for (const control in this.applicationForm.controls) {
+      if (this.applicationForm.controls[control].invalid) {
+        this.formErrors.push(control);
+      }
+    }
+  }
+  
 }
