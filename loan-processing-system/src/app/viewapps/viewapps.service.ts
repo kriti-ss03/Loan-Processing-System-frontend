@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface Application {
   applicationId: number;
-  firstName: string;
-  middleName:string,
-  lastName:string,
+ name:string;
   submittedDate: Date;
   status: string;
 }
@@ -15,7 +13,7 @@ export interface Application {
   providedIn: 'root'
 })
 export class ViewappsService {
-  private apiUrl = 'https://localhost:8080/appl'; // Replace with your actual backend URL
+  private apiUrl = 'https://localhost:8080/phansbank/v1/viewapps'; // Replace with your actual backend URL
 
   constructor(private http: HttpClient) { }
 
