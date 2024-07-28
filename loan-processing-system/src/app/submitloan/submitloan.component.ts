@@ -70,7 +70,13 @@ export class SubmitloanComponent implements OnInit {
       annualSalary: ['', Validators.required],
       workExperienceYears: ['', Validators.required],
       workExperienceMonths: ['', Validators.required],
-      designation: ['', Validators.required]
+      designation: ['', Validators.required],
+      employerAddressLine1: ['', [Validators.required, Validators.maxLength(255)]],
+      employerAddressLine2: ['', [Validators.required, Validators.maxLength(255)]],
+      employerCity: ['', [Validators.required, Validators.maxLength(255)]],
+      employerState:['', [Validators.required, Validators.maxLength(255)]],
+      employerPostalCode:['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
+
     });
   }
 
@@ -80,7 +86,7 @@ export class SubmitloanComponent implements OnInit {
       let applicationData= this.applicationForm.value;
       console.log(applicationData)
       this.checkSubmit=true;
-      this.http.post('http://localhost:5000/appl', applicationData) // Replace with your API endpoint
+      this.http.post('http://localhost:8080/appl', applicationData) // Replace with your API endpoint
         .subscribe(
           (response) => {
             // console.log('Application submitted successfully:', response);

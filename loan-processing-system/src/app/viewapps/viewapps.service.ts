@@ -13,7 +13,7 @@ export interface Application {
   providedIn: 'root'
 })
 export class ViewappsService {
-  private apiUrl = 'https://localhost:5000/appl'; // Replace with your actual backend URL
+  private apiUrl = 'https://localhost:8080/appl'; // Replace with your actual backend URL
 
   constructor(private http: HttpClient) { }
 
