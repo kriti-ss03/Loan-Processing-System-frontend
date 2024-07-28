@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface Application {
   applicationId: number;
- name:string;
+  applicantName:string;
   submittedDate: Date;
   status: string;
 }
