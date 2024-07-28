@@ -62,10 +62,10 @@ export class SubmitloanComponent implements OnInit {
       city: ['', [Validators.required, Validators.maxLength(255)]],
       state: ['', [Validators.required, Validators.maxLength(255)]],
       postalCode: ['', [Validators.required, Validators.pattern('^[0-9]{6}$')]],
-      homePhone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      officePhone: ['', [Validators.pattern('^[0-9]{10}$')]],
-      mobile: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      email: ['', [Validators.required, Validators.email]],
+      phoneHome: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      phoneOffice: ['', [Validators.pattern('^[0-9]{10}$')]],
+      phoneMobile: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      emailAddress: ['', [Validators.required, Validators.email]],
       employerName: ['', Validators.required],
       annualSalary: ['', Validators.required],
       workExperienceYear: ['', Validators.required],
@@ -76,7 +76,6 @@ export class SubmitloanComponent implements OnInit {
       employerCity: ['', [Validators.required, Validators.maxLength(255)]],
       employerState:['', [Validators.required, Validators.maxLength(255)]],
       employerPostalCode:['', [Validators.required, Validators.pattern('^[0-9]{6}$')]],
-
     });
   }
 
@@ -86,7 +85,7 @@ export class SubmitloanComponent implements OnInit {
       let applicationData= this.applicationForm.value;
       console.log(applicationData)
       this.checkSubmit=true;
-      this.http.post('http://localhost:8080/appl', applicationData) // Replace with your API endpoint
+      this.http.post('http://localhost:8080/submit', applicationData) // Replace with your API endpoint
         .subscribe(
           (response) => {
             // console.log('Application submitted successfully:', response);
