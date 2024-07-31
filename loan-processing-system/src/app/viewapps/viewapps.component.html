@@ -29,13 +29,9 @@
   <tbody>
     <tr *ngFor="let application of applications">
         <td><a [routerLink]="['/viewapplication', application.applicationId]">{{ application.applicationId }}</a></td>
-        <td>{{application.firstName}} {{ application.middleName }} {{ application.lastName }}</td>
-      <!-- <td>{{ application.firstName }} </td>
 
-      @if(application.middleName.length>0){
-        <td>{{ application.middleName }} </td>
-      }
-      <td>{{ application.lastName }} </td> -->
+      <td>{{ application.firstName }}  {{application.middleName}}  {{application.lastName}}</td>
+
       <td>{{ application.submittedDate }}</td>
       <td>{{ application.status }}</td>
     </tr>

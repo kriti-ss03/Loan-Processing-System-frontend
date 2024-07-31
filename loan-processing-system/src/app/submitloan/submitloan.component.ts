@@ -93,8 +93,12 @@ export class SubmitloanComponent implements OnInit {
       // change this to real time age
       this.applicantAge = 33
       console.log(applicationData)
+// <<<<<<< main
+//       this.checkSubmit=true;
+// =======
       if(this.applicantSalary>10000&&this.applicantExp>6&&this.applicantAge>18&&this.applicantAge<65){
         this.checkSubmit=true;
+// >>>>>>> main
       this.http.post('http://localhost:8080/phansbank/v1/submit', applicationData) // Replace with your API endpoint
         .subscribe(
           (response) => {
