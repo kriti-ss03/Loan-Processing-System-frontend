@@ -282,6 +282,13 @@
             </li>
           </ul>
         </div>
+        <div *ngIf="declineRules.length > 0" class="error">
+          <ul>
+            <li *ngFor="let rule of declineRules">
+              {{rule}}
+            </li>
+          </ul>
+        </div>
       </form>
     </body>
 }
