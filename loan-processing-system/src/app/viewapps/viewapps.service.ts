@@ -15,7 +15,7 @@ export interface Application {
   providedIn: 'root'
 })
 export class ViewappsService {
-  private apiUrl = 'https://localhost:8080/appl'; // Replace with your actual backend URL
+  private apiUrl = 'http://localhost:8080/phansbank/v1/viewapps'; // Replace with your actual backend URL
 
   constructor(private http: HttpClient) { }
 
