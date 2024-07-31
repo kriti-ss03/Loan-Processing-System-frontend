@@ -54,11 +54,11 @@ export class ViewApplicationComponent implements OnInit {
       workExperienceYears: [''],
       workExperienceMonths:[''],
       designation: [''],
-      // employerAddressLine1:[''],
-      // employerAddressLine2: [''],
-      // employerCity: [''],
-      // employerState:[''],
-      // employerPostalCode:[''],
+      employerAddressLine1:[''],
+      employerAddressLine2: [''],
+      employerCity: [''],
+      employerState:[''],
+      employerPostalCode:[''],
     });
   }
 
