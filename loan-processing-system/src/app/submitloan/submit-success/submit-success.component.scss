@@ -1,47 +1,89 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7f9;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f8f8f8;
 }
 
+/* Container Styles */
 .container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem 3rem;
     text-align: center;
-    background: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
 }
 
-h1 {
-    margin-bottom: 20px;
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.congrats {
-    margin-bottom: 20px;
-    font-size: 16px;
+/* Heading Styles */
+#successMsgHeading {
+    color: #2e7d32;
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
+/* Paragraph Styles */
+#successMsgPara {
+    color: #555555;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Button Container Styles */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
+/* Button Styles */
 button {
-    padding: 10px 20px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f0f0f0;
+    background-color: #007bff; /* Default color */
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    text-transform: none; /* Preserve original case */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #e0e0e0;
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Specific Button Styles */
+#home {
+    background-color: #007bff; /* Bluish color */
+}
+
+#home:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#viewApplications {
+    background-color: #dc3545; /* Red color */
+}
+
+#viewApplications:hover {
+    background-color: #c82333; /* Darker red on hover */
 }

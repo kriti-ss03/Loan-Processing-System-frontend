@@ -131,8 +131,11 @@
         </form>
     </body> -->
 
+    
+
     <body>
-      <form [formGroup]="applicationForm" (ngSubmit)="submitForm()">
+      <h1>Loan Application Form</h1>
+      <form id ="form" [formGroup]="applicationForm" (ngSubmit)="submitForm()">
         <div>
           <label for="firstName">First Name</label>
           <input id="firstName" formControlName="firstName">
