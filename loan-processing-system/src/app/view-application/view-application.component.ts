@@ -24,6 +24,7 @@ export class ViewApplicationComponent implements OnInit {
     private viewappsService:ViewappsService ,
     private fb: FormBuilder,
     // private viewApplicationService: ViewApplicationService
+    // try changing and checking the fields accordingly after integration of backend with frontend
   ) {
     this.applicationForm = this.fb.group({
       applicationId: [''],
@@ -44,14 +45,20 @@ export class ViewApplicationComponent implements OnInit {
       city: [''],
       state: [''],
       postalCode: [''],
-      homePhone: [''],
-      officePhone: [''],
-      mobile: [''],
+      phoneHome: [''],
+      phoneOffice: [''],
+      phoneMobile: [''],
       emailAddress: [''],
       employerName: [''],
       annualSalary: [''],
-      workExperience: [''],
-      designation: ['']
+      workExperienceYears: [''],
+      workExperienceMonths:[''],
+      designation: [''],
+      employerAddressLine1:[''],
+      employerAddressLine2: [''],
+      employerCity: [''],
+      employerState:[''],
+      employerPostalCode:[''],
     });
   }
 

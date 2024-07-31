@@ -1,12 +1,16 @@
  <div class="container">
         <h2>View Application</h2>
-        <!-- <div>
-          <p>Application ID: {{applicationForm.get('applicationId').value}}</p>
+        <div>
+          <!-- <p>Application ID: {{applicationForm.get('applicationId').value}}</p>
           <p>Application Status: {{applicationForm.get('applicationStatus').value}}</p>
           <p>Score: {{applicationForm.get('score').value}}</p>
-          <p>Decline Reason: {{applicationForm.get('declineReason').value}}</p>
-        </div> -->
-      
+          <p>Decline Reason: {{applicationForm.get('declineReason').value}}</p> -->
+          <p>Application ID: </p>
+          <p>Application Status:</p>
+          <p>Score:</p>
+          <p>Decline Reason:</p>
+        </div>
+
         <form [formGroup]="applicationForm">
           <div>
             <label>First Name</label>
@@ -44,7 +48,7 @@
             <label>Description</label>
             <textarea formControlName="description" readonly></textarea>
           </div>
-      
+
           <h3>Address</h3>
           <div>
             <label>Address Line 1</label>
@@ -66,7 +70,7 @@
             <label>Postal Code</label>
             <input type="text" formControlName="postalCode" readonly>
           </div>
-      
+
           <h3>Contact Information</h3>
           <div>
             <label>Home Phone</label>
@@ -84,7 +88,7 @@
             <label>Email Address</label>
             <input type="email" formControlName="emailAddress" readonly>
           </div>
-      
+
           <h3>Employment Details</h3>
           <div>
             <label>Employer Name</label>
@@ -102,8 +106,32 @@
             <label>Designation</label>
             <input type="text" formControlName="designation" readonly>
           </div>
+          <div>
+            <label for="employerAddressLine1">Address Line 1</label>
+            <input type="text"  formControlName="employerAddressLine1" readonly>
+          </div>
+
+          <div>
+            <label for="employerAddressLine2">Address Line 2</label>
+            <input type="text" formControlName="employerAddressLine2" readonly>
+          </div>
+
+          <div>
+            <label for="employerCity">City</label>
+            <input type="text" formControlName="employerCity" readonly>
+          </div>
+
+          <div>
+            <label for="employerState">State</label>
+            <input type="text" formControlName="employerState" readonly>
+          </div>
+
+          <div>
+            <label for="employerPostalCode">Postal Code</label>
+            <input type="text" formControlName="employerPostalCode" readonly>
+          </div>
+
         </form>
-      
+
         <button type="button" [routerLink]="['/viewapps']" >Back</button>
       </div>
-      

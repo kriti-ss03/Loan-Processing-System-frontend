@@ -29,7 +29,12 @@
   <tbody>
     <tr *ngFor="let application of applications">
         <td><a [routerLink]="['/viewapplication', application.applicationId]">{{ application.applicationId }}</a></td>
-      <td>{{ application.applicantName }} </td>
+      <td>{{ application.firstName }} </td>
+      <!-- if this dosent work try using *ngif and check it again -->
+      @if(application.middleName.length>0){
+        <td>{{ application.middleName }} </td>
+      }
+      <td>{{ application.lastName }} </td>
       <td>{{ application.submittedDate }}</td>
       <td>{{ application.status }}</td>
     </tr>
