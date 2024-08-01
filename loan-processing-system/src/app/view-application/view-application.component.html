@@ -13,18 +13,18 @@
   <div class="view-application foreground">
     <div class="application-summary name-fields">
       <div>
-        <strong>Application ID:</strong> {{ application.applicationId }}
+        <strong>Application ID:</strong> <span>{{ application.applicationId }}</span>
       </div>
         <div>
-          <strong>Application Status:</strong> {{ application.applicationStatus }}
+          <strong>Application Status:</strong> <span>{{ application.applicationStatus }}</span>
         </div>
 
 
       <div>
-        <strong>Score:</strong> {{ application.score }}
+        <strong>Score:</strong> <span>{{ application.score }}</span>
       </div>
 
-        <strong>Decline Reason:</strong> {{ application.declineReason || 'None' }}
+      <strong>Decline Reason:</strong> <span>{{ application.declineReason || 'None' }}</span>
        @for(rule of declineRules; track rule){
         <li>{{rule}}</li>
        }

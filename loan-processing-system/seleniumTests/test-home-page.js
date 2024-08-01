@@ -16,7 +16,8 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`Heading text mismatch: expected 'ABC BANK', got '${headingText}'`);
         }
         console.log(`Heading text verified: ${headingText}`);
-        
+        await driver.sleep(500)
+
         let subheading = await driver.wait(until.elementLocated(By.id('subheading')), 10000);
         await driver.wait(until.elementIsVisible(subheading), 10000);
         let subheadingText = await subheading.getText();
@@ -24,6 +25,8 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`Subheading text mismatch: expected 'Loan Processing Application', got '${subheadingText}'`);
         }
         console.log(`Subheading text verified: ${subheadingText}`);
+        await driver.sleep(500)
+
 
         // Wait for and verify the welcome message and instructions
         let welcomeHeading = await driver.wait(until.elementLocated(By.id('welcomeHeading')), 10000);
@@ -33,6 +36,7 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`Welcome message text mismatch: expected 'Welcome to ABC Bank Loan processing system.', got '${welcomeHeadingText}'`);
         }
         console.log(`Welcome heading text verified: ${welcomeHeadingText}`);
+        await driver.sleep(500)
 
         let p1 = await driver.wait(until.elementLocated(By.id('p1')), 10000);
         await driver.wait(until.elementIsVisible(p1), 10000);
@@ -41,6 +45,7 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`p1 text mismatch: expected 'Now Get your Loan Approved instantly!!!', got '${p1Text}'`);
         }
         console.log(`p1 text verified: ${p1Text}`);
+        await driver.sleep(500)
 
         let p2 = await driver.wait(until.elementLocated(By.id('p2')), 10000);
         await driver.wait(until.elementIsVisible(p2), 10000);
@@ -49,6 +54,7 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`p2 text mismatch: expected 'Your loan approved immediately using this cool and fully automated application.', got '${p2Text}'`);
         }
         console.log(`p2 text verified: ${p2Text}`);
+        await driver.sleep(500)
 
         let p3 = await driver.wait(until.elementLocated(By.id('p3')), 10000);
         await driver.wait(until.elementIsVisible(p3), 10000);
@@ -57,6 +63,7 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`p3 text mismatch: expected 'In order to Submit a new loan request, click on "Submit an application" on the right.', got '${p3Text}'`);
         }
         console.log(`p3 text verified: ${p3Text}`);
+        await driver.sleep(500)
 
         let p4 = await driver.wait(until.elementLocated(By.id('p4')), 10000);
         await driver.wait(until.elementIsVisible(p4), 10000);
@@ -65,6 +72,7 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`p4 text mismatch: expected 'For viewing existing loan applications, click on "View applications".', got '${p4Text}'`);
         }
         console.log(`p4 text verified: ${p4Text}`);
+        await driver.sleep(500)
 
         // Wait for and verify the buttons
         let submitLoanButton = await driver.wait(until.elementLocated(By.id('submitloan')), 10000);
@@ -74,6 +82,7 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`Submit button text mismatch: expected 'Submit an Application', got '${submitLoanButtonText}'`);
         }
         console.log(`Submit button text verified: ${submitLoanButtonText}`);
+        await driver.sleep(500)
 
         let viewAppsButton = await driver.wait(until.elementLocated(By.id('viewapps')), 10000);
         await driver.wait(until.elementIsVisible(viewAppsButton), 10000);
@@ -82,6 +91,7 @@ const { Builder, By, until } = require('selenium-webdriver');
             throw new Error(`View button text mismatch: expected 'View Applications', got '${viewAppsButtonText}'`);
         }
         console.log(`View button text verified: ${viewAppsButtonText}`);
+        await driver.sleep(500)
 
         // Click the buttons to ensure they work
         await submitLoanButton.click();

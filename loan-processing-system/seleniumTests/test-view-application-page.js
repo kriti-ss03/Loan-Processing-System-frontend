@@ -52,7 +52,7 @@ async function viewApplicationTest(id) {
 
       // Get and print the text
       let fieldValue = await element.getText();
-      console.log(`${field.label} value found:`, fieldValue);
+      console.log(`${field.label}`, fieldValue);
       await driver.sleep(700)
     }
 
