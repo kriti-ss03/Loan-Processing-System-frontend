@@ -7,7 +7,7 @@ const { Builder, By, until } = require('selenium-webdriver');
   try {
     // Fill and submit the form
     await fillForm(driver);
-
+    
     // Verify the success message
     let successMsgHeading = await driver.wait(until.elementLocated(By.id('successMsgHeading')), 10000);
     await driver.wait(until.elementIsVisible(successMsgHeading), 10000);
@@ -18,16 +18,28 @@ const { Builder, By, until } = require('selenium-webdriver');
     }
     console.log(`Success message heading verified: ${successMsgHeadingText}`);
 
-    let successMsgPara = await driver.wait(until.elementLocated(By.id('successMsgPara')), 10000);
-    await driver.wait(until.elementIsVisible(successMsgPara), 10000);
+    let successMsgPara1 = await driver.wait(until.elementLocated(By.id('successMsgPara1')), 10000);
+    await driver.wait(until.elementIsVisible(successMsgPara1), 10000);
 
-    let successMsgParaText = await successMsgPara.getText();
-    if (successMsgParaText !== 'CONGRATULATIONS !!!! your application is submitted successfully. Our automated system will determine if your application is accepted or not.') {
-      throw new Error(`Success message paragraph text mismatch: expected 'CONGRATULATIONS !!!! your application is submitted successfully. Our automated system will determine if your application is accepted or not.', got '${successMsgParaText}'`);
+    let successMsgParaText1 = await successMsgPara1.getText();
+    if (successMsgParaText1 !== 'CONGRATULATIONS !!!!') {
+      throw new Error(`Success message paragraph text mismatch: expected 'CONGRATULATIONS !!!!', got '${successMsgParaText1}'`);
     }
-    console.log(`Success message paragraph verified: ${successMsgParaText}`);
-
+    console.log(`Success message paragraph1 verified: ${successMsgParaText1}`);
     await driver.sleep(1000);
+
+    let successMsgPara2 = await driver.wait(until.elementLocated(By.id('successMsgPara2')), 10000);
+    await driver.wait(until.elementIsVisible(successMsgPara2), 10000);
+
+    let successMsgParaText2 = await successMsgPara2.getText();
+    if (successMsgParaText2 !== 'Your application is submitted successfully. Our automated system will determine if your application is accepted or not.') {
+      throw new Error(`Success message paragraph text mismatch: expected 'Your application is submitted successfully. Our automated system will determine if your application is accepted or not.', got '${successMsgParaText2}'`);
+    }
+    console.log(`Success message paragraph1 verified: ${successMsgParaText1}`);
+    await driver.sleep(1000);
+
+
+
 
     // Verify and click the home button
     let homeButton = await driver.wait(until.elementLocated(By.id('home')), 10000);
@@ -54,13 +66,25 @@ const { Builder, By, until } = require('selenium-webdriver');
     }
     console.log(`Success message heading verified: ${successMsgHeadingText}`);
 
-    successMsgPara = await driver.wait(until.elementLocated(By.id('successMsgPara')), 10000);
-    await driver.wait(until.elementIsVisible(successMsgPara), 10000);
-    successMsgParaText = await successMsgPara.getText();
-    if (successMsgParaText !== 'CONGRATULATIONS !!!! your application is submitted successfully. Our automated system will determine if your application is accepted or not.') {
-      throw new Error(`Success message paragraph text mismatch: expected 'CONGRATULATIONS !!!! your application is submitted successfully. Our automated system will determine if your application is accepted or not.', got '${successMsgParaText}'`);
+     successMsgPara1 = await driver.wait(until.elementLocated(By.id('successMsgPara1')), 10000);
+    await driver.wait(until.elementIsVisible(successMsgPara1), 10000);
+
+     successMsgParaText1 = await successMsgPara1.getText();
+    if (successMsgParaText1 !== 'CONGRATULATIONS !!!!') {
+      throw new Error(`Success message paragraph text mismatch: expected 'CONGRATULATIONS !!!!', got '${successMsgParaText1}'`);
     }
-    console.log(`Success message paragraph verified: ${successMsgParaText}`);
+    console.log(`Success message paragraph1 verified: ${successMsgParaText1}`);
+    await driver.sleep(1000);
+
+     successMsgPara2 = await driver.wait(until.elementLocated(By.id('successMsgPara2')), 10000);
+    await driver.wait(until.elementIsVisible(successMsgPara2), 10000);
+
+     successMsgParaText2 = await successMsgPara2.getText();
+    if (successMsgParaText2 !== 'Your application is submitted successfully. Our automated system will determine if your application is accepted or not.') {
+      throw new Error(`Success message paragraph text mismatch: expected 'Your application is submitted successfully. Our automated system will determine if your application is accepted or not.', got '${successMsgParaText2}'`);
+    }
+    console.log(`Success message paragraph1 verified: ${successMsgParaText1}`);
+    await driver.sleep(1000);
 
     await driver.sleep(1000);
 
@@ -104,41 +128,71 @@ async function fillForm(driver) {
 
   // Fill out the form
   await driver.findElement(By.id('firstName')).sendKeys('John');
+  await driver.sleep(700);
   await driver.findElement(By.id('middleName')).sendKeys('A');
+  await driver.sleep(700);
   await driver.findElement(By.id('lastName')).sendKeys('Doe');
+  await driver.sleep(700);
   await driver.findElement(By.id('dateOfBirth')).sendKeys('1990-01-01');
+  await driver.sleep(700);
   await driver.findElement(By.id('maritalStatus')).sendKeys('Single');
+  await driver.sleep(700);
   await driver.findElement(By.id('ssnNumber')).sendKeys('123-45-6789');
+  await driver.sleep(700);
   await driver.findElement(By.id('loanAmount')).sendKeys('10000');
+  await driver.sleep(700);
   await driver.findElement(By.id('loanPurpose')).sendKeys('Personal Loan');
+  await driver.sleep(700);
   await driver.findElement(By.id('description')).sendKeys('This is a test description.');
+  await driver.sleep(700);
 
   // Address fields
   await driver.findElement(By.id('addressLine1')).sendKeys('123 Main St');
+  await driver.sleep(700);
   await driver.findElement(By.id('addressLine2')).sendKeys('Apt 4B');
+  await driver.sleep(700);
   await driver.findElement(By.id('city')).sendKeys('Metropolis');
+  await driver.sleep(700);
   await driver.findElement(By.id('state')).sendKeys('NY');
+  await driver.sleep(700);
   await driver.findElement(By.id('postalCode')).sendKeys('56017');
+  await driver.sleep(700);
   console.log('Address fields filled out.');
+  await driver.sleep(700);
 
   // Contact information
   await driver.findElement(By.id('phoneHome')).sendKeys('1234567890');
+  await driver.sleep(700);
   await driver.findElement(By.id('phoneOffice')).sendKeys('1234567890');
+  await driver.sleep(700);
   await driver.findElement(By.id('phoneMobile')).sendKeys('1234567890');
+  await driver.sleep(700);
   await driver.findElement(By.id('emailAddress')).sendKeys('john.doe@example.com');
+  await driver.sleep(700);
   console.log('Contact information filled out.');
+  await driver.sleep(700);
 
   // Employment details
   await driver.findElement(By.id('employerName')).sendKeys('Tech Corp');
+  await driver.sleep(700);
   await driver.findElement(By.id('annualSalary')).sendKeys('80000');
+  await driver.sleep(700);
   await driver.findElement(By.id('workExperienceYears')).sendKeys('5');
+  await driver.sleep(700);
   await driver.findElement(By.id('workExperienceMonths')).sendKeys('6');
+  await driver.sleep(700);
   await driver.findElement(By.id('designation')).sendKeys('Software Engineer');
+  await driver.sleep(700);
   await driver.findElement(By.id('employerAddressLine1')).sendKeys('456 Elm St');
+  await driver.sleep(700);
   await driver.findElement(By.id('employerAddressLine2')).sendKeys('Suite 300');
+  await driver.sleep(700);
   await driver.findElement(By.id('employerCity')).sendKeys('Metropolis');
+  await driver.sleep(700);
   await driver.findElement(By.id('employerState')).sendKeys('NY');
+  await driver.sleep(700);
   await driver.findElement(By.id('employerPostalCode')).sendKeys('56017');
+  await driver.sleep(700);
   console.log('Employment details filled out.');
 
   // Wait for the submit button to be visible and enabled
