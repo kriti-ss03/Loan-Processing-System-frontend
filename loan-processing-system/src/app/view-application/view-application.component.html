@@ -148,7 +148,7 @@
       <!-- *ngIf="application"  -->
 <div class="application-details" >
   <h1>View Application</h1>
-  <!-- <div>
+  <div>
     <strong>Application ID:</strong> {{ application.id }}
   </div>
   <div>
@@ -157,9 +157,17 @@
   <div>
     <strong>Score:</strong> {{ application.score }}
   </div>
-  <div>
-    <strong>Decline Reason:</strong> {{ application.declineReason || 'None' }}
-  </div> -->
+<!-- this part of the code is not working check it later -->
+    <div *ngif="declineRules.length==0">
+      <strong>Decline Reason:</strong> {{ application.declineReason || 'None' }}
+    </div>
+    <div *ngif="declineRules.legth>0">
+      <strong>Decline Reason:</strong>
+      <li *ngFor="let rule of declineRules">
+        {{ rule }}
+      </li>
+    </div>
+
 
   <h2>Original Application</h2>
   <div>

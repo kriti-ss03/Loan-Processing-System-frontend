@@ -42,7 +42,7 @@ export class SubmitloanComponent implements OnInit {
   // applicantAge!:number
   // applicantSalary!:number
   // applicantExp!:number
-  // applicationData!: ApplicationData
+  //  applicationData!: ApplicationData
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
