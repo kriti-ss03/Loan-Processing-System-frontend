@@ -7,6 +7,18 @@ body {
     margin: 0;
     background-color: #f8f8f8;
 }
+.header{
+  // background-color:#ef2727bd;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #007bff;
+  background-color: #667f9a;
+  height:80px;
+  margin:-8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 .container {
     text-align: center;
@@ -42,6 +54,17 @@ button {
     transition: background-color 0.3s ease;
 }
 
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 button:hover {
-    background-color: #e0e0e0;
+  background-color: #0056b3;
 }
