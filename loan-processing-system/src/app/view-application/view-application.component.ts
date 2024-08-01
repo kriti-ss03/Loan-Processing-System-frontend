@@ -13,8 +13,8 @@ import { ViewappsService } from '../viewapps/viewapps.service';
   styleUrl: './view-application.component.scss'
 })
 export class ViewApplicationComponent implements OnInit {
-  applicationForm!: FormGroup;
-
+  // applicationForm!: FormGroup;
+  application: any;
   // @Input({required:true}) userId!:number
   // i have a option of changing thw way how i take the data from backend and display on client side
   // currently i am going witht the form method but if this dosent work, then i can make the interface ofn application form and take the values similar to the one i did in viewapps code
@@ -26,47 +26,42 @@ export class ViewApplicationComponent implements OnInit {
     // private viewApplicationService: ViewApplicationService
     // try changing and checking the fields accordingly after integration of backend with frontend
   ) {
-    this.applicationForm = this.fb.group({
-      applicationId: [''],
-      applicationStatus: [''],
-      score: [''],
-      declineReason: [''],
-      firstName: [''],
-      middleName: [''],
-      lastName: [''],
-      dateOfBirth: [''],
-      maritalStatus: [''],
-      ssnNumber: [''],
-      loanAmount: [''],
-      loanPurpose: [''],
-      description: [''],
-      addressLine1: [''],
-      addressLine2: [''],
-      city: [''],
-      state: [''],
-      postalCode: [''],
-      phoneHome: [''],
-      phoneOffice: [''],
-      phoneMobile: [''],
-      emailAddress: [''],
-      employerName: [''],
-      annualSalary: [''],
-      workExperienceYears: [''],
-      workExperienceMonths:[''],
-      designation: [''],
-      // employerAddressLine1:[''],
-      // employerAddressLine2: [''],
-      // employerCity: [''],
-      // employerState:[''],
-      // employerPostalCode:[''],
-    });
+    // this.applicationForm = this.fb.group({
+    //   applicationId: [''],
+    //   applicationStatus: [''],
+    //   score: [''],
+    //   declineReason: [''],
+    //   firstName: [''],
+    //   middleName: [''],
+    //   lastName: [''],
+    //   dateOfBirth: [''],
+    //   maritalStatus: [''],
+    //   ssnNumber: [''],
+    //   loanAmount: [''],
+    //   loanPurpose: [''],
+    //   description: [''],
+    //   addressLine1: [''],
+    //   addressLine2: [''],
+    //   city: [''],
+    //   state: [''],
+    //   postalCode: [''],
+    //   phoneHome: [''],
+    //   phoneOffice: [''],
+    //   phoneMobile: [''],
+    //   emailAddress: [''],
+    //   employerName: [''],
+    //   annualSalary: [''],
+    //   workExperienceYears: [''],
+    //   workExperienceMonths:[''],
+    //   designation: [''],
+    // });
   }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.viewappsService.getApplicationById(Number(id)).subscribe(data => {
-        this.applicationForm.patchValue(data);
+        this.application = data
       });
   }
 }

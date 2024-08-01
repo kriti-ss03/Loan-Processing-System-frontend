@@ -1,17 +1,17 @@
- <div class="container">
+ <!-- <div class="container">
         <h2>View Application</h2>
-        <div>
+        <div> -->
           <!-- <p>Application ID: {{applicationForm.get('applicationId').value}}</p>
           <p>Application Status: {{applicationForm.get('applicationStatus').value}}</p>
           <p>Score: {{applicationForm.get('score').value}}</p>
           <p>Decline Reason: {{applicationForm.get('declineReason').value}}</p> -->
-          <p>Application ID: </p>
+          <!-- <p>Application ID: </p>
           <p>Application Status:</p>
           <p>Score:</p>
           <p>Decline Reason:</p>
-        </div>
+        </div> -->
 
-        <form [formGroup]="applicationForm">
+        <!-- <form [formGroup]="applicationForm">
           <div>
             <label>First Name</label>
             <input type="text" formControlName="firstName" readonly>
@@ -105,7 +105,7 @@
           <div>
             <label>Designation</label>
             <input type="text" formControlName="designation" readonly>
-          </div>
+          </div> -->
           <!-- <div>
             <label for="employerAddressLine1">Address Line 1</label>
             <input type="text"  formControlName="employerAddressLine1" readonly>
@@ -131,7 +131,148 @@
             <input type="text" formControlName="employerPostalCode" readonly>
           </div> -->
 
-        </form>
+        <!-- </form> -->
 
-        <button type="button" [routerLink]="['/viewapps']" >Back</button>
-      </div>
+
+
+
+
+        <!-- <button type="button" [routerLink]="['/viewapps']" >Back</button>
+      </div> -->
+
+
+
+
+      <!-- src/app/view-application/view-application.component.html -->
+       <!-- add this in last in office -->
+      <!-- *ngIf="application"  -->
+<div class="application-details" >
+  <h1>View Application</h1>
+  <!-- <div>
+    <strong>Application ID:</strong> {{ application.id }}
+  </div>
+  <div>
+    <strong>Application Status:</strong> {{ application.status }}
+  </div>
+  <div>
+    <strong>Score:</strong> {{ application.score }}
+  </div>
+  <div>
+    <strong>Decline Reason:</strong> {{ application.declineReason || 'None' }}
+  </div> -->
+
+  <h2>Original Application</h2>
+  <div>
+    <label>First Name:</label>
+    <span>{{ application.firstName }}</span>
+  </div>
+  <div>
+    <label>Middle Name:</label>
+    <span>{{ application.middleName }}</span>
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <span>{{ application.lastName }}</span>
+  </div>
+  <div>
+    <label>Date of Birth:</label>
+    <span>{{ application.dateOfBirth}}</span>
+  </div>
+  <div>
+    <label>Marital Status:</label>
+    <span>{{ application.maritalStatus }}</span>
+  </div>
+  <div>
+    <label>SSN Number:</label>
+    <span>{{ application.ssnNumber }}</span>
+  </div>
+  <div>
+    <label>Loan Amount:</label>
+    <span>{{ application.loanAmount }}</span>
+  </div>
+  <div>
+    <label>Loan Purpose:</label>
+    <span>{{ application.loanPurpose }}</span>
+  </div>
+  <div>
+    <label>Description:</label>
+    <span>{{ application.description }}</span>
+  </div>
+
+  <h2>Address</h2>
+  <div>
+    <label>Address Line 1:</label>
+    <span>{{ application.addressLine1 }}</span>
+  </div>
+  <div>
+    <label>Address Line 2:</label>
+    <span>{{ application.addressLine2 }}</span>
+  </div>
+  <div>
+    <label>City:</label>
+    <span>{{ application.city }}</span>
+  </div>
+  <div>
+    <label>State:</label>
+    <span>{{ application.state }}</span>
+  </div>
+  <div>
+    <label>Postal Code:</label>
+    <span>{{ application.postalCode }}</span>
+  </div>
+
+  <h2>Contact Information</h2>
+  <div>
+    <label>Home Phone:</label>
+    <span>{{ application.phoneHome }}</span>
+  </div>
+  <div>
+    <label>Office Phone:</label>
+    <span>{{ application.phoneOffice }}</span>
+  </div>
+  <div>
+    <label>Mobile:</label>
+    <span>{{ application.phoneMobile }}</span>
+  </div>
+  <div>
+    <label>Email Address:</label>
+    <span>{{ application.emailAddress }}</span>
+  </div>
+
+  <h2>Employment Details</h2>
+  <div>
+    <label>Employer Name:</label>
+    <span>{{ application.employerName }}</span>
+  </div>
+  <div>
+    <label>Annual Salary:</label>
+    <span>{{ application.annualSalary }}</span>
+  </div>
+  <div>
+    <label>Work Experience:</label>
+    <span>{{ application.workExperienceYears }} years {{ application.workExperienceMonths }} months</span>
+  </div>
+  <div>
+    <label>Designation:</label>
+    <span>{{ application.designation }}</span>
+  </div>
+  <div>
+    <label>Address Line 1:</label>
+    <span>{{ application.employerAddressLine1 }}</span>
+  </div>
+  <div>
+    <label>Address Line 2:</label>
+    <span>{{ application.employerAddressLine2 }}</span>
+  </div>
+  <div>
+    <label>City:</label>
+    <span>{{ application.employerCity }}</span>
+  </div>
+  <div>
+    <label>State:</label>
+    <span>{{ application.employerState }}</span>
+  </div>
+
+  <button type="button" [routerLink]="['/viewapps']" >Back</button>
+</div>
+
