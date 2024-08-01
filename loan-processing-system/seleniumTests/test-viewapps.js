@@ -59,6 +59,7 @@ const chrome = require('selenium-webdriver/chrome');
 
         let rowLink = await row.findElement(By.css('a')).getAttribute('href');
         console.log('row link:', rowLink);
+        
 
         //URL check
         let id = rowDatas[0]
