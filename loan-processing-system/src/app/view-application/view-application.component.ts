@@ -42,9 +42,9 @@ export class ViewApplicationComponent implements OnInit {
   ) {
 
   }
-
+ 
   ngOnInit(): void {
-
+ 
     this.declineRules=[];
     console.log(this.declineRules)
     const id = this.route.snapshot.paramMap.get('id');
@@ -71,3 +71,4 @@ export class ViewApplicationComponent implements OnInit {
   }
 }
 }
+ 
