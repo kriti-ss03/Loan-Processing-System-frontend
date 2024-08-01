@@ -18,7 +18,7 @@ export class ViewApplicationComponent implements OnInit {
   application: any;
   declineRules:string[] =[];
   applicantAge!:number
-  applicantSalary!:number
+  applicantSalary!:any
   applicantExp!:number
 
   // @Input({required:true}) userId!:number
@@ -73,7 +73,7 @@ export class ViewApplicationComponent implements OnInit {
       this.viewappsService.getApplicationById(Number(id)).subscribe(data => {
         this.application = data
       });
-      this.applicantSalary = this.application.annualSalary;
+      this.applicantSalary = this.application.annualSalary ;
       this.applicantExp = this.application.workExperienceYears*12 + this.application.workExperienceMonths;
       this.applicantAge = 22
       if(this.applicantSalary<10000){

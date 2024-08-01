@@ -158,10 +158,10 @@
     <strong>Score:</strong> {{ application.score }}
   </div>
 <!-- this part of the code is not working check it later -->
-    <div *ngif="declineRules.length==0">
+    <div *ngIf="declineRules.length==0">
       <strong>Decline Reason:</strong> {{ application.declineReason || 'None' }}
     </div>
-    <div *ngif="declineRules.legth>0">
+    <div *ngIf="declineRules.legth>0">
       <strong>Decline Reason:</strong>
       <li *ngFor="let rule of declineRules">
         {{ rule }}
