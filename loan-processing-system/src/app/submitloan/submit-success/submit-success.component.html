@@ -1,12 +1,21 @@
+
 <body>
+  <nav class="navbar">
+    <div class="navbar-container">
+        <a [routerLink]="['']" class="navbar-logo">PHANS-BANK</a>
+
+        <a [routerLink]="['']" class="navbar-link">Home</a>
+
+    </div>
+  </nav>
     <div class="container">
         <h1>Application Submitted Successfully</h1>
         <p class="congrats">CONGRATULATIONS !!!! your application is submitted successfully. Our automated system will determine if your application is accepted or not.</p>
         <div class="buttons">
-            
+
             <button type="button" [routerLink]="['']" >Home</button>
             <button type="button" [routerLink]="['/viewapps']" >View Applications</button>
-           
+
         </div>
     </div>
 </body>

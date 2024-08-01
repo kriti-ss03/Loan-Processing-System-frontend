@@ -8,18 +8,14 @@ export interface Application {
   middleName:string,
   lastName:string,
   submittedDate: Date;
-  status: string;
+  applicationStatus: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class ViewappsService {
-// <<<<<<< main
   private apiUrl = 'http://localhost:8080/phansbank/v1/viewapps'; // Replace with your actual backend URL
-// =======
-//   private apiUrl = 'http://localhost:8080/phansbank/v1/viewapps';
-// >>>>>>> main
 
   constructor(private http: HttpClient) { }
 
