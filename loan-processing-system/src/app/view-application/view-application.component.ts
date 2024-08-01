@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 // import { ViewappsService } from '../viewapps/viewapps.component';
 import { ViewappsService } from '../viewapps/viewapps.service';
 import { CommonModule } from '@angular/common';
-import { Application } from './view-application.service';
+
 
 @Component({
   selector: 'app-view-application',
@@ -16,7 +16,7 @@ import { Application } from './view-application.service';
 })
 export class ViewApplicationComponent implements OnInit {
   // applicationForm!: FormGroup;
-  application!: Application;
+  application: any={};
   declineRules:string[] =[];
   applicantAge!:number
   applicantSalary!:number
@@ -71,9 +71,10 @@ export class ViewApplicationComponent implements OnInit {
     console.log(this.declineRules)
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
+      console.log("abcd")
       this.viewappsService.getApplicationById(Number(id)).subscribe(data => {
         this.application = data
-        // console.log("abcd")
+
         this.applicantSalary = this.application.annualSalary ;
         this.applicantExp = this.application.workExperienceYears*12 + this.application.workExperienceMonths;
         this.applicantAge = 22
