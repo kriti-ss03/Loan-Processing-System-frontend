@@ -70,10 +70,10 @@ export class ViewApplicationComponent implements OnInit {
     console.log(this.declineRules)
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.viewappsService.getApplicationById(Number(id)).subscribe(data => {
+      this.viewappsService.getApplicationById(Number(+id)).subscribe(data => {
         this.application = data
       });
-      console.log(this.application)
+      
       // this.applicantSalary = this.application.annualSalary ;
       // this.applicantExp = this.application.workExperienceYears*12 + this.application.workExperienceMonths;
       // this.applicantAge = 22
@@ -88,5 +88,6 @@ export class ViewApplicationComponent implements OnInit {
       // }
       // console.log(this.declineRules)
   }
+  console.log(this.application)
 }
 }
