@@ -22,6 +22,19 @@ export class ViewApplicationComponent implements OnInit {
   applicantSalary!:number
   applicantExp!:number
 
+  calculateAge(dofb:string, submittedDate:string ){
+    let dob = new Date(dofb);
+    let currentDate = new Date(submittedDate);
+
+    let age = currentDate.getFullYear() - dob.getFullYear();
+
+    if (currentDate.getMonth() < dob.getMonth() ||
+        (currentDate.getMonth() === dob.getMonth() && currentDate.getDate() < dob.getDate())) {
+        age--;
+    }
+
+    return age;
+  }
   // @Input({required:true}) userId!:number
   // i have a option of changing thw way how i take the data from backend and display on client side
   // currently i am going witht the form method but if this dosent work, then i can make the interface ofn application form and take the values similar to the one i did in viewapps code
@@ -77,7 +90,7 @@ export class ViewApplicationComponent implements OnInit {
 
         this.applicantSalary = this.application.annualSalary ;
         this.applicantExp = this.application.workExperienceYears*12 + this.application.workExperienceMonths;
-        this.applicantAge = 22
+        this.applicantAge =  this.calculateAge(this.application.dateOfBirth, this.application.submittedDate)
         if(this.applicantSalary<10000){
           this.declineRules.push("Annual salary is less than $10,000")
         }
