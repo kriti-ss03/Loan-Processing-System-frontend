@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 // import { ViewappsService } from '../viewapps/viewapps.component';
 import { ViewappsService } from '../viewapps/viewapps.service';
 import { CommonModule } from '@angular/common';
+import { Application } from './view-application.service';
 
 @Component({
   selector: 'app-view-application',
@@ -15,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ViewApplicationComponent implements OnInit {
   // applicationForm!: FormGroup;
-  application: any;
+  application!: Application;
   declineRules:string[] =[];
   applicantAge!:number
   applicantSalary!:any
