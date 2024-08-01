@@ -38,10 +38,10 @@ export class SubmitloanComponent implements OnInit {
   successMessage: string | null = null;
   errorMessage: string | null = null;
   formErrors: string[] = [];
-  declineRules: string[]= []
-  applicantAge!:number
-  applicantSalary!:number
-  applicantExp!:number
+  // declineRules: string[]= []
+  // applicantAge!:number
+  // applicantSalary!:number
+  // applicantExp!:number
   // applicationData!: ApplicationData
   constructor(
     private fb: FormBuilder,
@@ -85,18 +85,18 @@ export class SubmitloanComponent implements OnInit {
 
   submitForm() {
     this.formErrors = [];
-    this.declineRules=[];
+    // this.declineRules=[];
     if (this.applicationForm.valid) {
       let applicationData= this.applicationForm.value;
-      this.applicantSalary = applicationData.annualSalary
-      this.applicantExp = applicationData.workExperienceMonths + 12*applicationData.workExperienceYears
-      // change this to real time age
-      this.applicantAge = 33
+      // this.applicantSalary = applicationData.annualSalary
+      // this.applicantExp = applicationData.workExperienceMonths + 12*applicationData.workExperienceYears
+      // // change this to real time age
+      // this.applicantAge = 33
       console.log(applicationData)
 // <<<<<<< main
 //       this.checkSubmit=true;
 // =======
-      if(this.applicantSalary>10000&&this.applicantExp>6&&this.applicantAge>18&&this.applicantAge<65){
+      // if(this.applicantSalary>10000&&this.applicantExp>6&&this.applicantAge>18&&this.applicantAge<65){
         this.checkSubmit=true;
 // >>>>>>> main
       this.http.post('http://localhost:8080/phansbank/v1/submit', applicationData) // Replace with your API endpoint
@@ -113,19 +113,19 @@ export class SubmitloanComponent implements OnInit {
             this.successMessage = null;
           }
         );
-      }
-      else{
-        if(this.applicantSalary<10000){
-          this.declineRules.push("The application cannot be submitted as the annual salary is less than $10,000")
-        }
-        if(this.applicantExp<6){
-          this.declineRules.push("The application cannot be submitted as the working exprience is less than 6 months")
-        }
-        if(this.applicantAge<18&&this.applicantAge>65){
-          this.declineRules.push("The application cannot be sunbmitted as the age is not in the range of 18 to 65")
-        }
+      // }
+      // else{
+      //   if(this.applicantSalary<10000){
+      //     this.declineRules.push("The application cannot be submitted as the annual salary is less than $10,000")
+      //   }
+      //   if(this.applicantExp<6){
+      //     this.declineRules.push("The application cannot be submitted as the working exprience is less than 6 months")
+      //   }
+      //   if(this.applicantAge<18&&this.applicantAge>65){
+      //     this.declineRules.push("The application cannot be sunbmitted as the age is not in the range of 18 to 65")
+      //   }
 
-      }
+      // }
 
     }
     else {
