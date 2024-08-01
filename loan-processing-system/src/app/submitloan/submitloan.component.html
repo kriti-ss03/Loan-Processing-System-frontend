@@ -2,6 +2,14 @@
     <app-submit-success/>
 }
 @else{
+  <nav class="navbar">
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">PHANS-BANK</a>
+
+        <a href="/" class="navbar-link">Home</a>
+
+    </div>
+</nav>
     <body>
       <form [formGroup]="applicationForm" (ngSubmit)="submitForm()">
         <div>
