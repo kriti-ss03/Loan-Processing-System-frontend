@@ -51,7 +51,7 @@ const chrome = require('selenium-webdriver/chrome');
           console.error('row does not have the correct number of columns.');
         }
         for (let rowData of rowDatas) {
-          if (rowData == null) {
+          if (rowData == '') {
             throw new Error("null values is found in a row")
           }
         }
