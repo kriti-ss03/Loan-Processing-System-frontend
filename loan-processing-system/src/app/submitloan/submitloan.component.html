@@ -275,13 +275,15 @@
        <!-- Display success or error messages -->
         <!-- <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
         <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div> -->
-        <div *ngIf="formErrors.length > 0" class="error">
-          <ul>
-            <li *ngFor="let error of formErrors">
-              {{ error | titlecase }} is required or invalid.
-            </li>
-          </ul>
-        </div>
+        @if(formErrors.length>0){
+          <div  class="error">
+            <ul>
+              @for(error of formErrors; track error){
+                <li>{{ error | titlecase }} is required or invalid.</li>
+              }
+            </ul>
+          </div>
+        }
       </form>
     </body>
 }

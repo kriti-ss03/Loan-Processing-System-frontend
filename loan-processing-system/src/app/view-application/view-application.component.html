@@ -172,15 +172,20 @@
     <strong>Score:</strong> {{ application.score }}
   </div>
 <!-- this part of the code is not working check it later -->
-    <div *ngIf="declineRules.length==0">
+ @if(declineRules.length==0){
+    <div>
       <strong>Decline Reason:</strong> {{ application.declineReason || 'None' }}
     </div>
-    <div *ngIf="declineRules.length>0">
+  }
+  @else{
+    <div>
       <strong>Decline Reason:</strong>
-      <li *ngFor="let rule of declineRules">
-        {{ rule }}
-      </li>
+      @for(rule of declineRules; track rule){
+        <li >{{ rule }}</li>
+      }
     </div>
+  }
+
 
 
   <h2>Original Application</h2>
