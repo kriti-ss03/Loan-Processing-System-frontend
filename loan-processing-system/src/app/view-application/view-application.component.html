@@ -1,33 +1,42 @@
 <nav class="navbar">
   <div class="navbar-container">
-      <a [routerLink]="['']" class="navbar-logo">PHANS-BANK</a>
+      <a href="/" class="navbar-logo">PHANS-BANK</a>
 
-      <a [routerLink]="['']" class="navbar-link">Home</a>
+      <a href="/" class="navbar-link">Home</a>
 
   </div>
 </nav>
-
 <div class="body1">
 <div class="application-details" >
   <h1>VIEW APPLICATION</h1>
   <div class="view-application foreground">
     <div class="application-summary name-fields">
       <div>
-        <strong>Application ID:</strong> <span>{{ application.applicationId }}</span>
+        <strong>Application ID:</strong> {{ application.applicationId }}
       </div>
+      @if(declineRules.length>0){
         <div>
-          <strong>Application Status:</strong> <span>{{ application.applicationStatus }}</span>
+          <strong>Application Status: Decline</strong>
         </div>
-
-
+      }
+      @else{
+        <div>
+          <strong>Application Status:</strong> {{ application.applicationStatus }}
+        </div>
+      }
       <div>
-        <strong>Score:</strong> <span>{{ application.score }}</span>
+        <strong>Score:</strong> {{ application.score }}
       </div>
-
-      <strong>Decline Reason:</strong> <span>{{ application.declineReason || 'None' }}</span>
-       @for(rule of declineRules; track rule){
-        <li>{{rule}}</li>
-       }
+      <!-- this part of the code is not working check it later, #now its working -->
+      <div *ngIf="declineRules.length==0">
+        <strong>Decline Reason:</strong> {{ application.declineReason || 'None' }}
+      </div>
+      <div *ngIf="declineRules.length>0">
+        <strong>Decline Reason:</strong>
+        <li *ngFor="let rule of declineRules">
+          {{ rule }}
+        </li>
+      </div>
     </div>
 
   </div>
@@ -37,39 +46,39 @@
     <div class="original-application ">
       <div class="original-application-left name-fields">
         <div>
-          <label>First Name:</label>
+          <label>First Name: </label>
           <span>{{ application.firstName }}</span>
         </div>
         <div>
-          <label>Middle Name:</label>
+          <label>Middle Name: </label>
           <span>{{ application.middleName }}</span>
         </div>
         <div>
-          <label>Last Name:</label>
+          <label>Last Name: </label>
           <span>{{ application.lastName }}</span>
         </div>
         <div>
-          <label>Date of Birth:</label>
+          <label>Date of Birth: </label>
           <span>{{ application.dateOfBirth}}</span>
         </div>
         <div>
-          <label>Marital Status:</label>
+          <label>Marital Status: </label>
           <span>{{ application.maritalStatus }}</span>
         </div>
         <div>
-          <label>SSN Number:</label>
+          <label>SSN Number: </label>
           <span>{{ application.ssnNumber }}</span>
         </div>
         <div>
-          <label>Loan Amount:</label>
+          <label>Loan Amount: </label>
           <span>{{ application.loanAmount }}</span>
         </div>
         <div>
-          <label>Loan Purpose:</label>
+          <label>Loan Purpose: </label>
           <span>{{ application.loanPurpose }}</span>
         </div>
         <div>
-          <label>Description:</label>
+          <label>Description: </label>
           <span>{{ application.description }}</span>
         </div>
       </div>
@@ -78,23 +87,23 @@
           <h3 class="address-heading">Address</h3>
           <div class="address secondary-border name-fields">
             <div>
-              <label>Address Line 1:</label>
+              <label>Address Line 1: </label>
               <span>{{ application.addressLine1 }}</span>
             </div>
             <div>
-              <label>Address Line 2:</label>
+              <label>Address Line 2: </label>
               <span>{{ application.addressLine2 }}</span>
             </div>
             <div>
-              <label>City:</label>
+              <label>City: </label>
               <span>{{ application.city }}</span>
             </div>
             <div>
-              <label>State:</label>
+              <label>State: </label>
               <span>{{ application.state }}</span>
             </div>
             <div>
-              <label>Postal Code:</label>
+              <label>Postal Code: </label>
               <span>{{ application.postalCode }}</span>
             </div>
           </div>
@@ -103,19 +112,19 @@
           <h3>Contact Information</h3>
           <div class="contact-info secondary-border name-fields">
             <div>
-              <label>Home Phone:</label>
+              <label>Home Phone: </label>
               <span>{{ application.phoneHome }}</span>
             </div>
             <div>
-              <label>Office Phone:</label>
+              <label>Office Phone: </label>
               <span>{{ application.phoneOffice }}</span>
             </div>
             <div>
-              <label>Mobile:</label>
+              <label>Mobile: </label>
               <span>{{ application.phoneMobile }}</span>
             </div>
             <div>
-              <label>Email Address:</label>
+              <label>Email Address: </label>
               <span>{{ application.emailAddress }}</span>
             </div>
           </div>
@@ -128,42 +137,42 @@
       <div class="employment-info name-fields">
         <div>
           <div>
-            <label>Employer Name:</label>
+            <label>Employer Name: </label>
             <span>{{ application.employerName }}</span>
           </div>
           <div>
-            <label>Annual Salary:</label>
+            <label>Annual Salary: </label>
             <span>{{ application.annualSalary }}</span>
           </div>
         </div>
         <div>
           <div>
-            <label>Work Experience:</label>
+            <label>Work Experience: </label>
             <span>{{ application.workExperienceYears }} years {{ application.workExperienceMonths }} months</span>
           </div>
           <div>
-            <label>Designation:</label>
+            <label>Designation: </label>
             <span>{{ application.designation }}</span>
           </div>
         </div>
         <div></div>
       </div>
-      <label>Address</label>
+      <!-- <label>Address</label> -->
       <div class="employment-address name-fields">
         <div>
-          <label>Address Line 1:</label>
+          <label>Address Line 1: </label>
           <span>{{ application.employerAddressLine1 }}</span>
         </div>
         <div>
-          <label>Address Line 2:</label>
+          <label>Address Line 2: </label>
           <span>{{ application.employerAddressLine2 }}</span>
         </div>
         <div>
-          <label>City:</label>
+          <label>City: </label>
           <span>{{ application.employerCity }}</span>
         </div>
         <div>
-          <label>State:</label>
+          <label>State: </label>
           <span>{{ application.employerState }}</span>
         </div>
       </div>
