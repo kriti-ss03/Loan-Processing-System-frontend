@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 // import { ViewappsService } from '../viewapps/viewapps.component';
 import { ViewappsService } from '../viewapps/viewapps.service';
 import { CommonModule } from '@angular/common';
+import { Application } from './view-application.service';
 
 @Component({
   selector: 'app-view-application',
@@ -15,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ViewApplicationComponent implements OnInit {
   // applicationForm!: FormGroup;
-  application: any;
+  application!: Application;
   declineRules:string[] =[];
   applicantAge!:number
   applicantSalary!:any
@@ -70,22 +71,22 @@ export class ViewApplicationComponent implements OnInit {
     console.log(this.declineRules)
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.viewappsService.getApplicationById(Number(id)).subscribe(data => {
+      this.viewappsService.getApplicationById(Number(+id)).subscribe(data => {
         this.application = data
       });
       console.log(this.application)
-      // this.applicantSalary = this.application.annualSalary ;
-      // this.applicantExp = this.application.workExperienceYears*12 + this.application.workExperienceMonths;
-      // this.applicantAge = 22
-      // if(this.applicantSalary<10000){
-      //   this.declineRules.push("Annual salary is less than $10,000")
-      // }
-      // if(this.applicantExp<6){
-      //   this.declineRules.push("Working exprience is less than 6 months")
-      // }
-      // if(this.applicantAge<18&&this.applicantAge>65){
-      //   this.declineRules.push("Age is not in the range of 18 to 65")
-      // }
+      this.applicantSalary = this.application.annualSalary ;
+      this.applicantExp = this.application.workExperienceYears*12 + this.application.workExperienceMonths;
+      this.applicantAge = 22
+      if(this.applicantSalary<10000){
+        this.declineRules.push("Annual salary is less than $10,000")
+      }
+      if(this.applicantExp<6){
+        this.declineRules.push("Working exprience is less than 6 months")
+      }
+      if(this.applicantAge<18&&this.applicantAge>65){
+        this.declineRules.push("Age is not in the range of 18 to 65")
+      }
       // console.log(this.declineRules)
   }
 }
