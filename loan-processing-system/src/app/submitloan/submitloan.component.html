@@ -1,152 +1,155 @@
 @if(checkSubmit){
-    <app-submit-success/>
+  <app-submit-success/>
 }
 @else{
-  <nav class="navbar">
-    <div class="navbar-container">
-        <a href="/" class="navbar-logo">PHANS-BANK</a>
 
-        <a href="/" class="navbar-link">Home</a>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+          <a href="/" class="navbar-logo">PHANS-BANK</a>
+          
+          <a href="/" class="navbar-link">Home</a>
+          
+      </div>
+  </nav>
+  <h1>Please fill your loan application form</h1>
+    <form id="form" [formGroup]="applicationForm" (ngSubmit)="submitForm()">
+      <div>
+        <label for="firstName">First Name</label>
+        <input id="firstName" placeholder="Enter your first name" formControlName="firstName">
+      </div>
+      <div>
+        <label for="middleName">Middle Name</label>
+        <input id="middleName" placeholder="Enter your middle name" formControlName="middleName">
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <input id="lastName" placeholder="Enter your last name" formControlName="lastName">
+      </div>
+      <div>
+        <label for="dateOfBirth">Date of Birth</label>
+        <input id="dateOfBirth" type="date" placeholder="Select your date of birth" formControlName="dateOfBirth">
+      </div>
+      <div>
+        <label for="maritalStatus">Marital Status</label>
+        <select id="maritalStatus"  placeholder="Select your marital status" formControlName="maritalStatus">
+          <option  value="" disabled selected>Select your marital status</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Separated">Separated</option>
+          <option value="Divorced">Divorced</option>
+          <option value="Widowed">Widowed</option>
+        </select>
+      </div>
+      <div>
+        <label for="ssnNumber">SSN Number</label>
+        <input id="ssnNumber" placeholder="Enter your SSN number" formControlName="ssnNumber">
+      </div>
+      <div>
+        <label for="loanAmount">Loan Amount</label>
+        <input id="loanAmount" type="number" placeholder="Enter the loan amount" formControlName="loanAmount">
+      </div>
+      <div>
+        <label for="loanPurpose">Loan Purpose</label>
+        <select id="loanPurpose" placeholder="Select the loan purpose" formControlName="loanPurpose">
+          <option value="" disabled selected>Select your loan purpose</option>
+          <option value="Debt">Debt</option>
+          <option value="Home Loan">Home Loan</option>
+          <option value="Personel Loan">Personel Loan</option>
+          <option value="Educational Loan">Educational Loan</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Enter a description" formControlName="description"></textarea>
+      </div>
 
-    </div>
-</nav>
-    <body>
-      <form [formGroup]="applicationForm" (ngSubmit)="submitForm()">
-        <div>
-          <label for="firstName">First Name</label>
-          <input id="firstName" formControlName="firstName">
-        </div>
-        <div>
-          <label for="middleName">Middle Name</label>
-          <input id="middleName" formControlName="middleName">
-        </div>
-        <div>
-          <label for="lastName">Last Name</label>
-          <input id="lastName" formControlName="lastName">
-        </div>
-        <div>
-          <label for="dateOfBirth">Date of Birth</label>
-          <input id="dateOfBirth" type="date" formControlName="dateOfBirth">
-        </div>
-        <div>
-          <label for="maritalStatus">Marital Status</label>
-          <select id="maritalStatus" formControlName="maritalStatus">
-            <option value="Single">Single</option>
-            <option value="Married">Married</option>
-            <option value="Separated">Separated</option>
-            <option value="Divorced">Divorced</option>
-            <option value="Widowed">Widowed</option>
-          </select>
-        </div>
-        <div>
-          <label for="ssnNumber">SSN Number</label>
-          <input id="ssnNumber" formControlName="ssnNumber">
-        </div>
-        <div>
-          <label for="loanAmount">Loan Amount</label>
-          <input id="loanAmount" type="number" formControlName="loanAmount">
-        </div>
-        <div>
-          <label for="loanPurpose">Loan Purpose</label>
-          <select id="loanPurpose" formControlName="loanPurpose">
-            <option value="Debt">Debt</option>
-            <option value="Home Loan">Home Loan</option>
-            <option value="Personel Loan">Personel Loan</option>
-            <option value="Educational Loan">Educational Loan</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div>
-          <label for="description">Description</label>
-          <textarea id="description" formControlName="description"></textarea>
-        </div>
-
-        <!-- Address -->
-        <fieldset>
-          <legend>Address</legend>
-
-          <label for="addressLine1">Address Line 1</label>
-          <input type="text" id="addressLine1" name="addressLine1" formControlName="addressLine1">
-
-          <label for="addressLine2">Address Line 2</label>
-          <input type="text" id="addressLine2" name="addressLine2" formControlName="addressLine2">
-
-          <label for="city">City</label>
-          <input type="text" id="city" formControlName="city">
-
-          <label for="state">State</label>
-          <input type="text" id="state" formControlName="state">
-
-          <label for="postalCode">Postal Code</label>
-          <input type="text" id="postalCode" formControlName="postalCode">
-       </fieldset>
-
-
-       <!--contact information -->
-       <fieldset>
-        <legend>Contact Information</legend>
-
-        <label for="phoneHome">Home Phone</label>
-        <input type="text" id="phoneHome" formControlName="phoneHome">
-
-        <label for="phoneOffice">Office Phone</label>
-        <input type="text" id="phoneOffice" formControlName="phoneOffice">
-
-        <label for="phoneMobile">Mobile</label>
-        <input type="text" id="phoneMobile" formControlName="phoneMobile">
-
-        <label for="emailAddress">Email Address</label>
-        <input type="email" id="emailAddress" formControlName="emailAddress">
-      </fieldset>
-
-      <!-- employee details -->
+      <!-- here is the address -->
       <fieldset>
-        <legend>Employment Details</legend>
+        <legend>Address</legend>
 
-        <label for="employerName">Employer</label>
-        <input type="text" id="employerName" formControlName="employerName">
+        <label for="addressLine1">Address Line 1</label>
+        <input type="text" id="addressLine1" placeholder="Enter address line 1" formControlName="addressLine1">
 
-        <label for="annualSalary">Annual Salary</label>
-        <input type="number" id="annualSalary" formControlName="annualSalary">
+        <label for="addressLine2">Address Line 2</label>
+        <input type="text" id="addressLine2" placeholder="Enter address line 2" formControlName="addressLine2">
 
-        <label for="workExperience">Work Experience</label>
-        <div class="work-experience">
-            <input type="number" id="workExperienceYears" name="workExperienceYears" formControlName="workExperienceYears" placeholder="Year">
-            <input type="number" id="workExperienceMonths" name="workExperienceMonths" formControlName="workExperienceMonths" placeholder="Month">
-        </div>
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="Enter your city" formControlName="city">
 
-        <label for="designation">Designation</label>
-        <input type="text" id="designation" formControlName="designation">
+        <label for="state">State</label>
+        <input type="text" id="state" placeholder="Enter your state" formControlName="state">
 
-        <label for="employerAddressLine1">Address Line 1</label>
-        <input type="text" id="employerAddressLine1" formControlName="employerAddressLine1">
+        <label for="postalCode">Postal Code</label>
+        <input type="text" id="postalCode" placeholder="Enter your postal code" formControlName="postalCode">
+     </fieldset>
 
-        <label for="employerAddressLine2">Address Line 2</label>
-        <input type="text" id="employerAddressLine2" formControlName="employerAddressLine2">
+     <!-- Here will come contact information -->
+     <fieldset>
+      <legend>Contact Information</legend>
 
-        <label for="employerCity">City</label>
-        <input type="text" id="employerCity" formControlName="employerCity">
+      <label for="phoneHome">Home Phone</label>
+      <input type="text" id="phoneHome" placeholder="Enter your home phone number" formControlName="phoneHome">
 
-        <label for="employerState">State</label>
-        <input type="text" id="employerState" formControlName="employerState">
+      <label for="phoneOffice">Office Phone</label>
+      <input type="text" id="phoneOffice" placeholder="Enter your office phone number" formControlName="phoneOffice">
 
-        <label for="employerPostalCode">Postal Code</label>
-        <input type="text" id="employerPostalCode" formControlName="employerPostalCode">
+      <label for="phoneMobile">Mobile</label>
+      <input type="text" id="phoneMobile" placeholder="Enter your mobile phone number" formControlName="phoneMobile">
+
+      <label for="emailAddress">Email Address</label>
+      <input type="email" id="emailAddress" placeholder="Enter your email address" formControlName="emailAddress">
     </fieldset>
-        <div class="buttons">
-          <button type="submit">Submit</button>
-          <button type="button" [routerLink]="['']" >Cancel</button>
-        </div>
-        @if(formErrors.length>0){
-          <div  class="error">
-            <ul>
-              @for(error of formErrors; track error){
-                <li>{{ error | titlecase }} is required or invalid.</li>
-              }
-            </ul>
-          </div>
-        }
-      </form>
-    </body>
-}
 
+    <!-- here will come employee details -->
+    <fieldset>
+      <legend>Employment Details</legend>
+
+      <label for="employerName">Employer</label>
+      <input type="text" id="employerName" placeholder="Enter your employer's name" formControlName="employerName">
+
+      <label for="annualSalary">Annual Salary</label>
+      <input type="number" id="annualSalary" placeholder="Enter your annual salary" formControlName="annualSalary">
+
+      <label for="workExperience">Work Experience</label>
+      <div class="work-experience">
+          <input type="number" id="workExperienceYears" name="workExperienceYears" placeholder="Years of experience" formControlName="workExperienceYears">
+          <input type="number" id="workExperienceMonths" name="workExperienceMonths" placeholder="Months of experience" formControlName="workExperienceMonths">
+      </div>
+
+      <label for="designation">Designation</label>
+      <input type="text" id="designation" placeholder="Enter your designation" formControlName="designation">
+
+      <label for="employerAddressLine1">Address Line 1</label>
+      <input type="text" id="employerAddressLine1" placeholder="Enter employer's address line 1" formControlName="employerAddressLine1">
+
+      <label for="employerAddressLine2">Address Line 2</label>
+      <input type="text" id="employerAddressLine2" placeholder="Enter employer's address line 2" formControlName="employerAddressLine2">
+
+      <label for="employerCity">City</label>
+      <input type="text" id="employerCity" placeholder="Enter employer's city" formControlName="employerCity">
+
+      <label for="employerState">State</label>
+      <input type="text" id="employerState" placeholder="Enter employer's state" formControlName="employerState">
+
+      <label for="employerPostalCode">Postal Code</label>
+      <input type="text" id="employerPostalCode" placeholder="Enter employer's postal code" formControlName="employerPostalCode">
+  </fieldset>
+
+      <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="button" [routerLink]="['']" >Cancel</button>
+      </div>
+
+     <!-- Display success or error messages -->
+      <div *ngIf="formErrors.length > 0" class="error">
+        <ul>
+          <li *ngFor="let error of formErrors">
+            {{ error | titlecase }} is required or invalid.
+          </li>
+        </ul>
+      </div>
+    </form>
+  </body>
+}

@@ -9,12 +9,13 @@
     </div>
   </nav>
     <div class="container">
-        <h1>Application Submitted Successfully</h1>
-        <p class="congrats">CONGRATULATIONS !!!! your application is submitted successfully. Our automated system will determine if your application is accepted or not.</p>
+        <h1 id="successMsgHeading">Application Submitted Successfully</h1>
+        <p id="successMsgPara1" class="congrats">CONGRATULATIONS !!!!</p>
+        <p id="successMsgPara2">Your application is submitted successfully. Our automated system will determine if your application is accepted or not.</p>
         <div class="buttons">
 
-            <button type="button" [routerLink]="['']" >Home</button>
-            <button type="button" [routerLink]="['/viewapps']" >View Applications</button>
+            <button id="home" type="button" [routerLink]="['']">Home</button>
+            <button id="viewApplications" type="button" [routerLink]="['/viewapps']">View Applications</button>
 
         </div>
     </div>
